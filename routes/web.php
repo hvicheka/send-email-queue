@@ -23,7 +23,7 @@ Route::get('mail', function () {
     ];
 
     $job = (new \App\Jobs\MailNewPostAdded($details))
-        ->delay(now()->addSecond(100));
+        ->delay(now()->addSecond(3));
 
     dispatch($job);
     echo "Mail send successfully !!";
